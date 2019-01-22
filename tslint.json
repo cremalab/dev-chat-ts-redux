@@ -1,0 +1,32 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "semi": false,
+        "trailingComma": "es5",
+        "printWidth": 91
+      }
+    ],
+    "no-implicit-dependencies": false,
+    "object-literal-sort-keys": false,
+    "trailing-comma": [
+      true,
+      "spec"
+    ],
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "interface-over-type-literal": false
+  },
+  "rulesDirectory": []
+}
