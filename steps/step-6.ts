@@ -55,6 +55,6 @@ interface Action<Payload> {
 
 /* 🆕 START NEW */
 
-type ReducerAction = Action<Item> | Action<string>
+type ReducerAction = Action<Item> | Action<Item["id"]>
 
 /* 🆕 END NEW */

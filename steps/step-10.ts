@@ -28,16 +28,13 @@ export const reducer = (state = initialState, action: ReducerAction): State => {
     case ActionType.ITEM_REMOVE:
       return { items: state.items.filter(item => item.id !== action.payload) }
     default:
-      return handleDefaultReducerCase(action, state) /* 👈 CHANGE */
+      return assertNever(action, state) /* 👈 CHANGE */
   }
 }
 
 /* 🆕 START NEW */
 
-const handleDefaultReducerCase = <DefaultState>(
-  action: never,
-  state: DefaultState
-): DefaultState => state
+const assertNever: AssertNever = (_, state) => state
 
 /* 🆕 END NEW */
 
@@ -72,3 +69,9 @@ type ActionCreatorItemRemove = ActionCreator<
   Item["id"],
   [Item["id"]]
 >
+
+/* 🆕 START NEW */
+
+type AssertNever = <A>(action: never, state: A) => A
+
+/* 🆕 END NEW */
