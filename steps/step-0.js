@@ -7,27 +7,24 @@ const ActionType = {
   ITEM_REMOVE: "ITEM_REMOVE",
 }
 
-export const itemAdd = (item: Item): Action<Item> => ({
+export const itemAdd = (item) => ({
   type: ActionType.ITEM_ADD,
   payload: item,
 })
 
-export const itemRemove = (id: Item["id"]): Action<Item["id"]> => ({
+export const itemRemove = (id) => ({
   type: ActionType.ITEM_REMOVE,
   payload: id,
 })
 
-const initialState: State = {
+const initialState = {
   items: [],
 }
 
-export const reducer = (
-  state = initialState,
-  action: ReducerAction /* 👈 Change */
-): State => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.ITEM_ADD:
-      return { items: [...state.items, action.payload] } /* 🤔 */
+      return { items: [...state.items, action.payload] }
     case ActionType.ITEM_REMOVE:
       return { items: state.items.filter(item => item.id !== action.payload) }
     default:
@@ -39,22 +36,4 @@ export const reducer = (
  * TYPE DEFINITIONS HERE 👇👇👇
  ***************************************************************************************/
 
-interface Item {
-  name: string
-  id: string
-}
-
-interface State {
-  items: Item[]
-}
-
-interface Action<Payload> {
-  type: string
-  payload: Payload
-}
-
-/* 🆕 START NEW */
-
-type ReducerAction = Action<Item> | Action<Item["id"]>
-
-/* 🆕 END NEW */
+/* No types for you!!! (yet) */

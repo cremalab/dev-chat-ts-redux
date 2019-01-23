@@ -1,8 +1,0 @@
-- Turn on Strict Options
-  - ![](https://cl.ly/1e32a57f132d)
-- Identify needed types 
-  - Obvious (red squiggles)
-    - ![](https://cl.ly/92c33a4dc8fe)
-  - Non-obvious (lack of constraints)
-    - 
-- Annotate state
